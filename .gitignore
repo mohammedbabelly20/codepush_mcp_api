@@ -13,3 +13,6 @@ wheels/
 
 # dotenv
 .env
+
+# CodePush MCP server
+codepush_mcp/

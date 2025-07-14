@@ -17,6 +17,8 @@ from src.controllers import (
 from src.mcp_server import MCPServer
 
 
+load_dotenv()
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     if not MCPServer().setup():
@@ -48,7 +50,6 @@ app.get("/sessions")(get_active_sessions)
 
 
 async def main():
-    load_dotenv()
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
 

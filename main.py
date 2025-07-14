@@ -49,7 +49,7 @@ app.post("/query")(process_query)
 app.get("/sessions")(get_active_sessions)
 
 
-async def main():
+def main():
     uvicorn.run(app, host="0.0.0.0", port=10000)
 
 

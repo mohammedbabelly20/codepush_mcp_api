@@ -66,6 +66,7 @@ class MCPServer:
             print(f"Error during environment setup: {e}")
             return False
 
+        print(f"✓ MCP server setup complete at {self.repo_path}")
         return True
 
     def get_connection_info(self, codepush_access_key: str):

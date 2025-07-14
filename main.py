@@ -14,10 +14,14 @@ from src.controllers import (
     get_active_sessions,
     SessionResponse,
 )
+from src.mcp_server import MCPServer
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    if not MCPServer().setup():
+        print("Failed to set up MCP server. Exiting.")
+        raise SystemExit(1)
     yield
 
     # Cleanup all sessions on shutdown
